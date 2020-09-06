@@ -1,0 +1,72 @@
+import 'package:flutter/material.dart';
+import 'package:geo/app/components/bottomnavbar.dart';
+import 'package:geo/app/components/pagenavigator.dart';
+import 'package:geo/app/constants.dart';
+import 'package:geo/app/pages/home/home_page.dart';
+import 'package:geo/app/pages/profile/profilemethods.dart';
+import 'package:geo/app/pages/profile/profilemodel.dart';
+import 'package:geo/app/utils/auth_utils.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+// import 'package:login_statefull/src/screens/dashtest.dart';
+
+class Profile extends StatefulWidget {
+  @override
+  _ProfileState createState() => _ProfileState();
+}
+
+class _ProfileState extends State<Profile> {
+  final profileApi=ProfileRepository();
+  Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+  String authToken;
+  SharedPreferences _sharedPreferences;
+  GlobalKey<FormState> _key = new GlobalKey();
+  bool _validate = true;
+  bool _isenabled = false;
+  String sendButtonName = "Edit";
+     List<Data> profiledata = [];
+    List<Data> profiledatalogan = [];
+
+
+@override
+  void initState() {
+    super.initState();
+   validateLogin();
+  }
+  validateLogin() async {
+    _sharedPreferences = await _prefs;
+     authToken = AuthUtils.getToken(_sharedPreferences);
+    profiledata =await profileApi.getUserDataFromProfileCode(authToken, _isenabled, getUserProfile,"sumit");
+
+// print(profiledata[0].name);
+    setState(() {
+      profiledatalogan=profiledata;
+    });
+}
+
+ 
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        bottomNavigationBar: MyBottomBar(),
+        appBar: AppBar(
+          backgroundColor: Colors.indigo.shade500,
+          title: Text("My Profile"),
+        ),
+        body: SingleChildScrollView(
+          child: Container(
+            margin: new EdgeInsets.all(15.0),
+            child: Form(
+              child: formUI(),
+              key: _key,
+              autovalidate: _validate,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+
+}

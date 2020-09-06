@@ -1,0 +1,84 @@
+name: mco
+description: A new Flutter project.
+
+version: 1.0.0+1
+
+
+environment:
+  sdk: ">=2.2.2 <3.0.0"
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^0.1.2
+  geolocator: ^5.3.2+2
+  quiver: ^2.1.3
+  universal_html: ^1.2.1
+  google_maps_flutter: ^0.5.13
+  geocoder: ^0.2.1
+  http: ^0.12.0+2
+  shared_preferences: ^0.5.8
+  cached_network_image: ^2.2.0+1
+  dio: ^3.0.9
+  location: ^2.3.5
+  splashscreen: ^1.2.0
+  xform: ^0.2.0
+  marquee: ^1.5.0
+  file_picker: 
+  flutter_datetime_picker: ^1.3.8
+  smooth_star_rating: ^1.0.2
+  rflutter_alert: ^1.0.2
+  circular_bottom_navigation: ^1.0.0
+  animated_text_kit: ^2.2.0
+  url_launcher: ^5.0.2
+  connectivity: ^0.4.9
+  intl: 
+  eva_icons_flutter: ^2.0.0
+  fluttertoast: ^4.0.1
+  provider: ^4.1.3
+  oktoast: ^2.1.8
+  highlighter_coachmark: ^0.0.3
+  after_layout: ^1.0.7+2
+  animated_list_view_scroll: any
+  titled_navigation_bar: ^3.5.0
+  responsive_grid: ^1.1.1
+  font_awesome_flutter:
+  rounded_letter: ^0.0.5
+  flutter_launcher_icons: ^0.7.4
+  dropdown_formfield: ^0.1.1
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter_icons:
+  android: "launcher_icon" 
+  ios: true
+  image_path: "lib/app/assets/logo.png"
+# For information on the generic Dart part of this file, see the
+# following page: https://www.dartlang.org/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+  uses-material-design: true
+  assets:
+  - lib/app/assets/logo.png
+  - lib/app/assets/clinic_paceholder.png
+  - lib/app/assets/red_square.png
+  - lib/app/assets/map2.png
+  - lib/app/assets/backLogin.jpg
+  - lib/app/assets/mapicon.svg
+  - lib/app/assets/verificationicon.svg
+  - lib/app/assets/myaccount.svg
+  - lib/app/assets/bulletionsicon.svg
+  - lib/app/assets/homeicon.svg
+  - lib/app/assets/aboutusicon.svg
+  - lib/app/assets/settingicon.svg
+  - lib/app/assets/ecardicon.svg
+  - lib/app/assets/policylisticon.svg
+  - lib/app/assets/claimicon.svg
